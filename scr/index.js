@@ -1,7 +1,7 @@
 let userScore = 0;
 let compScore = 0;
-var vid = document.getElementById("myVideo");
-vid.volume = 0.4;
+// var vid = document.getElementById("myVideo");
+// vid.volume = 0.4;
 let userScore_span = document.getElementById("user-score");
 let compScore_span = document.getElementById("comp-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -95,3 +95,5 @@ function main(){
 };
 
 main();
+// var vid = document.getElementById("myVideo");
+// vid.volume = 0.4;
