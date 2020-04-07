@@ -9,10 +9,19 @@ body{
     background-color:#565D86;
     margin-bottom: 100px;
 }
-
+#headerSec1{
+    display: flex;
+    place-content: center
+    
+}
 header{
-	background:white;
-	padding:20px;
+	background:rgb(168, 168, 168);
+    padding:20px;
+    display: inline-flex;
+    border-radius: 47%;
+    color: white;
+    align-items: center;
+
 }
 
 header h1{
@@ -49,12 +58,11 @@ header h1{
     color: #565d85;
     	font-size:14px;
 	padding:2px 10px;
-	font-family: Asap, sans-serif;
+    font-family: Asap, sans-serif;
+    border-radius: 45%;
 }
 #myVideo{
-    display: flex;
-    width: 300px;
-    position: fixed;
+    
 }
 #user-label{
 	position:absolute;

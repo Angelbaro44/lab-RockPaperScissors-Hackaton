@@ -7,17 +7,22 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+        <section id ='headerSec1'>
 		<header>
-			<h1>Pokemon League Championship Match</h1>
+            
+			<img style="height: 50px; width:auto;"  src='image/squritle line ani.gif'><h1>Pokemon League Championship Match</h1><img style="height: 50px; width:auto;" src='image/bulbasaur line ani.gif'>
         </header>
-        
+        <span style="display:none"> <audio id="myVideo" controls autoplay loop>
+            <source  src="image/cynthia-theme.mp4" type="audio/mpeg">
+        </audio></span>
+    </section>
         <div id="divVs">
         <img class="vsimg" src='image/ash ani.gif'>
 
 		<div class="scoreboard">
 			<div style="font-size: 20px;" id="user-label" class="badge"><p>Ash Katchum</p></div>
 			<div  style="font-size: 20px;"id="comp-label" class="badge"><p>Champion Cynthia</p></div>
-            <span id="user-score"><p>0</p></span>:<span id="comp-score"><p>0</p></span>
+            <span id="user-score"><p>0</p></span>VS<span id="comp-score"><p>0</p></span>
             
 		</div>
         <img class="vsimg" src='image/cynthia ani.gif'>
@@ -40,9 +45,7 @@
 
         <p id="action-message">Make your move</p>
         
-        <audio id="myVideo" controls autoplay loop>
-            <source  src="image/cynthia-theme.mp4" type="audio/mpeg">
-        </audio>
+        
         <script src="scr/index.js" charset="utf-8"></script>
 	</body>
 </html>

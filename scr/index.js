@@ -95,5 +95,5 @@ function main(){
 };
 
 main();
-// var vid = document.getElementById("myVideo");
-// vid.volume = 0.4;
+var vid = document.getElementById("myVideo");
+vid.volume = 0.4;
