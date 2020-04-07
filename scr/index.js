@@ -1,5 +1,7 @@
 let userScore = 0;
 let compScore = 0;
+var vid = document.getElementById("myVideo");
+vid.volume = 0.4;
 let userScore_span = document.getElementById("user-score");
 let compScore_span = document.getElementById("comp-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -13,11 +15,11 @@ function getCompChoice(){
 	const randomNumber = Math.floor(Math.random() * 3);
 	return choices[randomNumber];
 }
-// function makeWord(letter){
-// 	if (letter === "rock") return "Rock";
-// 	if (letter === "paper") return "Paper";
-// 	return "Scissors";
-// }
+function makeWord(letter){
+	if (letter === "rock") return "Grass";
+	if (letter === "paper") return "Fire";
+	return "Water";
+}
 function showCompChoice(compChoice){
 	if (compChoice === "rock"){
 		rock_div.classList.add("comp-choice");
@@ -39,19 +41,19 @@ function win(userChoice, compChoice){
 	userScore++;
 	userScore_span.innerHTML = userScore;
 	showCompChoice(compChoice);
-	result_p.innerHTML = `<span style="color:#00E4F2;">${makeWord(userChoice)}</span> beats <span style="color:#F9F345;">${makeWord(compChoice)}</span>. You win!`;
+	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon beat Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You won this match - Ready your next Pokemon.`;
 }
 
 function lose(userChoice, compChoice){
 	compScore++;
 	compScore_span.innerHTML = compScore;
 	showCompChoice(compChoice);
-	result_p.innerHTML = `<span style="color:#00E4F2;">${makeWord(userChoice)}</span> gets beaten by <span style="color:#F9F345;">${makeWord(compChoice)}</span>. You lose!`;
+	result_p.innerHTML = `Your <span style="color:#00E4F2;"> ${makeWord(userChoice)}</span>-type Pokemon got beaten by Champion Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You lost this match - Ready your next Pokemon.`;
 }
 
 function draw(userChoice, compChoice){
 	showCompChoice(compChoice);
-	result_p.innerHTML = `<span style="color:#00E4F2;">${makeWord(userChoice)}</span> is the same as <span style="color:#F9F345;">${makeWord(compChoice)}</span>. It's a draw!`;
+	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon is the same type as Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span> type Pokemon.<br> It's a draw! Both Pokemon fainted.`;
 }
 
 function game(userChoice){

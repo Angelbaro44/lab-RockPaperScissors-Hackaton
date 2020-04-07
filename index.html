@@ -3,37 +3,46 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>ROCK PAPER SCISSORS</title>
+		<title>Pokemon League Championship Match</title>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<header>
-			<h1>Rock Paper Scissors</h1>
-		</header>
+			<h1>Pokemon League Championship Match</h1>
+        </header>
+        
+        <div id="divVs">
+        <img class="vsimg" src='image/ash ani.gif'>
 
 		<div class="scoreboard">
-			<div id="user-label" class="badge">user</div>
-			<div id="comp-label" class="badge">comp</div>
-			<span id="user-score">0</span>:<span id="comp-score">0</span>
+			<div style="font-size: 20px;" id="user-label" class="badge"><p>Ash Katchum</p></div>
+			<div  style="font-size: 20px;"id="comp-label" class="badge"><p>Champion Cynthia</p></div>
+            <span id="user-score"><p>0</p></span>:<span id="comp-score"><p>0</p></span>
+            
 		</div>
-
+        <img class="vsimg" src='image/cynthia ani.gif'>
+    </div>
 		<div class="result">
-			<p>Welcome to the game...</p>
+			<p>Choose your type of pokemon...</p>
 		</div>
 
 		<div class="choices">
 			<div class="choice" id="rock">
-        <i class="fa fa-fw fa-hand-rock"></i>
+                <img class="typeimg" src='image/leaf stone ani.gif'>
 			</div>
 			<div class="choice" id="paper">
-				<i class="fa fa-fw fa-hand-paper"></i>
+				<img class="typeimg" src='image/fire stone ani.gif'>
 			</div>
 			<div class="choice" id="scissors">
-				<img class="fa fa-fw fa-hand-scissors"></img>
+				<img class="typeimg" src='image/water stone ani.gif'>
 			</div>
 		</div>
 
-		<p id="action-message">Make your move</p>
-		<script src="scr/index.js" charset="utf-8"></script>
+        <p id="action-message">Make your move</p>
+        
+        <script src="scr/index.js" charset="utf-8"></script>
+        <audio id="myVideo" controls autoplay loop>
+            <source  src="image/cynthia-theme.mp4" type="audio/mpeg">
+        </audio>
 	</body>
 </html>
