@@ -4,7 +4,7 @@ let compScore = 0;
 // vid.volume = 0.4;
 let userScore_span = document.getElementById("user-score");
 let compScore_span = document.getElementById("comp-score");
-const scoreBoard_div = document.querySelector(".score-board");
+const scoreBoard_div = document.querySelector(".nametag");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
@@ -22,20 +22,20 @@ function makeWord(letter){
 }
 function showCompChoice(compChoice){
 	if (compChoice === "rock"){
-		rock_div.classList.add("comp-choice");
+		rock_div.classList.add("computorChoice");
 	}
 	if (compChoice === "paper"){
-		paper_div.classList.add("comp-choice");
+		paper_div.classList.add("computorChoice");
 	}
 	if (compChoice === "scissors"){
-		scissors_div.classList.add("comp-choice");
+		scissors_div.classList.add("computorChoice");
 	}
 	setTimeout(hideChoices, 1500);
 }
 function hideChoices(){
-	rock_div.classList.remove("comp-choice","user-choice");
-	paper_div.classList.remove("comp-choice","user-choice");
-	scissors_div.classList.remove("comp-choice","user-choice");
+	rock_div.classList.remove("computorChoice","playerChoice");
+	paper_div.classList.remove("computorChoice","playerChoice");
+	scissors_div.classList.remove("computorChoice","playerChoice");
 }
 function win(userChoice, compChoice){
 	userScore++;
@@ -80,17 +80,17 @@ function game(userChoice){
 function main(){
 	rock_div.addEventListener('click', function(){
 		game("rock");
-		rock_div.classList.add("user-choice");
+		rock_div.classList.add("playerChoice");
 	});
 
 	paper_div.addEventListener('click', function(){
 		game("paper");
-		paper_div.classList.add("user-choice");
+		paper_div.classList.add("playerChoice");
 	});
 
 	scissors_div.addEventListener('click', function(){
 		game("scissors");
-		scissors_div.classList.add("user-choice");
+		scissors_div.classList.add("playerChoice");
 	})
 };
 

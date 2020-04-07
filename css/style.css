@@ -53,7 +53,7 @@ header h1{
     place-items: flex-end;
 }
 
-.badge{
+.nametag{
 	background:#E2584D;
     color: #565d85;
     	font-size:14px;
@@ -76,13 +76,13 @@ header h1{
 	right:-30px;
 	background:#F9F345;
 }
-.comp-choice{
+.computorChoice{
 	background:#F9F345;
 }
-.user-choice{
+.playerChoice{
 	background:#00E4F2;
 }
-.comp-choice.user-choice{
+.computorChoice.playerChoice{
 	border-color:#F9F345;
 	border-width:6px;
 	padding:18px;
