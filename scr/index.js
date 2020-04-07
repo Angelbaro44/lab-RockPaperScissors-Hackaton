@@ -15,46 +15,6 @@ function getCompChoice(){
 	const randomNumber = Math.floor(Math.random() * 3);
 	return choices[randomNumber];
 }
-function makeWord(letter){
-	if (letter === "rock") return "Grass";
-	if (letter === "paper") return "Fire";
-	return "Water";
-}
-function showCompChoice(compChoice){
-	if (compChoice === "rock"){
-		rock_div.classList.add("computorChoice");
-	}
-	if (compChoice === "paper"){
-		paper_div.classList.add("computorChoice");
-	}
-	if (compChoice === "scissors"){
-		scissors_div.classList.add("computorChoice");
-	}
-	setTimeout(hideChoices, 1500);
-}
-function hideChoices(){
-	rock_div.classList.remove("computorChoice","playerChoice");
-	paper_div.classList.remove("computorChoice","playerChoice");
-	scissors_div.classList.remove("computorChoice","playerChoice");
-}
-function win(userChoice, compChoice){
-	userScore++;
-	userScore_span.innerHTML = userScore;
-	showCompChoice(compChoice);
-	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon beat Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You won this match - Ready your next Pokemon.`;
-}
-
-function lose(userChoice, compChoice){
-	compScore++;
-	compScore_span.innerHTML = compScore;
-	showCompChoice(compChoice);
-	result_p.innerHTML = `Your <span style="color:#00E4F2;"> ${makeWord(userChoice)}</span>-type Pokemon got beaten by Champion Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You lost this match - Ready your next Pokemon.`;
-}
-
-function draw(userChoice, compChoice){
-	showCompChoice(compChoice);
-	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon is the same type as Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span> type Pokemon.<br> It's a draw! Both Pokemon fainted.`;
-}
 
 function game(userChoice){
 	const compChoice = getCompChoice();
@@ -75,6 +35,48 @@ function game(userChoice){
 			draw(userChoice, compChoice);
 			break;
 	}
+}
+function win(userChoice, compChoice){
+	userScore++;
+	userScore_span.innerHTML = userScore;
+	showCompChoice(compChoice);
+	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon beat Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You won this match - Ready your next Pokemon.`;
+}
+
+function lose(userChoice, compChoice){
+	compScore++;
+	compScore_span.innerHTML = compScore;
+	showCompChoice(compChoice);
+	result_p.innerHTML = `Your <span style="color:#00E4F2;"> ${makeWord(userChoice)}</span>-type Pokemon got beaten by Champion Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You lost this match - Ready your next Pokemon.`;
+}
+
+function draw(userChoice, compChoice){
+	showCompChoice(compChoice);
+	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon is the same type as Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span> type Pokemon.<br> It's a draw! Both Pokemon fainted.`;
+}
+function makeWord(letter){
+	if (letter === "rock") return "Grass";
+	if (letter === "paper") return "Fire";
+	return "Water";
+}
+function showCompChoice(compChoice){
+	if (compChoice === "rock"){
+		rock_div.classList.add("computorChoice");
+	}
+	if (compChoice === "paper"){
+		paper_div.classList.add("computorChoice");
+	}
+	if (compChoice === "scissors"){
+		scissors_div.classList.add("computorChoice");
+	}
+	setTimeout(hideChoices, 1500);
+}
+
+
+function hideChoices(){
+	rock_div.classList.remove("computorChoice","playerChoice");
+	paper_div.classList.remove("computorChoice","playerChoice");
+	scissors_div.classList.remove("computorChoice","playerChoice");
 }
 
 function main(){
