@@ -10,13 +10,28 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
+var gameTrack = document.createElement("audio");
+gameTrack.src = "image/cynthia-theme.mp3";
+
+var win1 = document.createElement("audio");
+win1.src = "image/win1.mp3";
+
+var lose1 = document.createElement("audio");
+lose1.src = "image/lose1.wav";
+
+var tie1 = document.createElement("audio");
+tie1.src = "image/tie1.wav";
+
+gameTrack.play();
+
 function getCompChoice(){
+	
 	const choices = ["rock", "paper", "scissors"];
 	const randomNumber = Math.floor(Math.random() * 3);
 	return choices[randomNumber];
 }
-
 function game(userChoice){
+	window.onclick = hideChoices();
 	const compChoice = getCompChoice();
 	switch(userChoice + compChoice){
 		case "rockscissors":
@@ -38,6 +53,7 @@ function game(userChoice){
 }
 function win(userChoice, compChoice){
 	userScore++;
+	win1.play();
 	userScore_span.innerHTML = userScore;
 	showCompChoice(compChoice);
 	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon beat Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You won this match - Ready your next Pokemon.`;
@@ -45,6 +61,7 @@ function win(userChoice, compChoice){
 
 function lose(userChoice, compChoice){
 	compScore++;
+	lose1.play();
 	compScore_span.innerHTML = compScore;
 	showCompChoice(compChoice);
 	result_p.innerHTML = `Your <span style="color:#00E4F2;"> ${makeWord(userChoice)}</span>-type Pokemon got beaten by Champion Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span>-type Pokemon!<br> You lost this match - Ready your next Pokemon.`;
@@ -52,6 +69,7 @@ function lose(userChoice, compChoice){
 
 function draw(userChoice, compChoice){
 	showCompChoice(compChoice);
+	tie1.play();
 	result_p.innerHTML = `Your <span style="color:#00E4F2;">${makeWord(userChoice)}</span>-type Pokemon is the same type as Cynthia's <span style="color:#F9F345;">${makeWord(compChoice)}</span> type Pokemon.<br> It's a draw! Both Pokemon fainted.`;
 }
 function makeWord(letter){
@@ -60,6 +78,8 @@ function makeWord(letter){
 	return "Water";
 }
 function showCompChoice(compChoice){
+
+
 	if (compChoice === "rock"){
 		rock_div.classList.add("computorChoice");
 	}
@@ -69,7 +89,6 @@ function showCompChoice(compChoice){
 	if (compChoice === "scissors"){
 		scissors_div.classList.add("computorChoice");
 	}
-	setTimeout(hideChoices, 1500);
 }
 
 
